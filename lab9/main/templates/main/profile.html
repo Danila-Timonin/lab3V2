@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+вход
+{% endblock %}
+
+{% block main %}
+  <div class="container">
+    <h1 class="text-center mt-5">Профиль пользователя</h1>
+    <form>
+      <div class="form-group">
+        <label for="username" class="form-label-lg">Имя пользователя:</label>
+        <input type="text" class="form-control form-control-lg" id="username" value="{{ user.username }}" readonly>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label-lg">Email:</label>
+        <input type="email" class="form-control form-control-lg" id="email" value="{{ user.email }}" readonly>
+      </div>
+    </form>
+    <a class="btn btn-primary" href="{% url 'logout' %}">Выйти</a>
+  </div>
+{% endblock %}
